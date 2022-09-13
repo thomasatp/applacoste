@@ -97,7 +97,7 @@ function Header({ darkTheme, setDarkTheme, scrollDisplay }) {
         <ul>
           {categories.map(category => (
             <li key={category} id={category}>
-              <Link onClick={() => setOpen(false)} to='/plp'>
+              <Link onClick={() => setOpen(false)} to={process.env.PUBLIC_URL + '/'}>
                 {category}
                 <ChevronDown color={iconColor} />
               </Link>

@@ -22,8 +22,8 @@ function App() {
       <Header scrollDisplay={scrollDisplay} darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
       <MainContainer darkTheme={darkTheme}>
         <Routes>
-          <Route path={process.env.PUBLIC_URL + '/'} element={<Starter />} />
-          <Route path={process.env.PUBLIC_URL + '/plp'} element={<Plp />} />
+          <Route exact path='/' element={<Starter />} />
+          <Route path='/plp' element={<Plp />} />
         </Routes>
       </MainContainer>
     </div>

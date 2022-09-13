@@ -32,7 +32,7 @@ function ColorSelection({ productColors, display }) {
     console.log(idSelected)
   }
   return (
-    <ColorSelectionWrapper display={display} className='align-center mt-s'>
+    <ColorSelectionWrapper display={display} className='flex align-center mt-s'>
       {productColors.map((col, id) => (
         <ColorItem
           key={id}

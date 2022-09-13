@@ -49,11 +49,6 @@ const Wrapper = styled.div`
   @media ${mediaQueries.mobileOnly} {
     top: ${({ stickyLevel }) => (stickyLevel ? '10.3rem' : '0rem')};
   }
-
-  @media ${mediaQueries.desktopOnly} {
-    margin-left: ${({ stickyLevel }) => (stickyLevel ? '0rem' : 'calc(4vw + 17.6rem)')};
-    padding-left: ${({ stickyLevel }) => (stickyLevel ? '4vw' : '2.4rem')};
-  }
 `
 
 const Range = styled.input`

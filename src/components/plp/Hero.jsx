@@ -19,8 +19,8 @@ function Hero({ title, desc }) {
 
 const Container = styled.main`
   display: flex;
-  height: 20vw;
-  min-height: 250px;
+  height: 25vw;
+  min-height: 30rem;
   overflow: hidden;
   position: relative;
 `

@@ -1,7 +1,7 @@
 import React from 'react'
 import useObserver from '../../hooks/useObserver'
 import styled from 'styled-components'
-import surf from '../../medias/videos/surf.mp4'
+import durable from '../../medias/videos/durable.mp4'
 import colors from '../../utils/colors'
 import mediaQueries from '../../utils/mediaQueries'
 import Video from '../medias/Video'
@@ -15,10 +15,10 @@ export default function Starter() {
 
   return (
     <Wrapper ref={ref}>
-      <Video source={surf} />
+      <Video source={durable} />
       <WrapperOverlay>
         <TextWrapper className='obs' isVisible={isVisible}>
-          <Title className='lacoste'>Lacoste Heritage</Title>
+          <Title className='lacoste'>Durable Elegance</Title>
           <Text>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
             laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
@@ -73,8 +73,9 @@ const TextWrapper = styled.div`
 `
 
 const Title = styled.h2`
-  font-size: clamp(5rem, 10vw, 10rem);
-  line-height: 1;
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-style: italic;
+  line-height: 0.8;
   color: ${colors.white};
   margin-bottom: 3.2rem;
 `

@@ -66,7 +66,7 @@ function Header({ darkTheme, setDarkTheme, scrollDisplay }) {
   return (
     <Wrapper darkTheme={darkTheme}>
       <Head>
-        <Link to={process.env.PUBLIC_URL + '/'}>
+        <Link to='/'>
           <Logo darkTheme={darkTheme} />
         </Link>
         <SearchBar scrollDisplay={scrollDisplay} open={open} darkTheme={darkTheme}>
@@ -97,7 +97,7 @@ function Header({ darkTheme, setDarkTheme, scrollDisplay }) {
         <ul>
           {categories.map(category => (
             <li key={category} id={category}>
-              <Link onClick={() => setOpen(false)} to={process.env.PUBLIC_URL + '/plp'}>
+              <Link onClick={() => setOpen(false)} to='/plp'>
                 {category}
                 <ChevronDown color={iconColor} />
               </Link>

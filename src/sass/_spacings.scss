@@ -1,0 +1,39 @@
+$sizes: (xs: 0.4, s: 0.8, sm: 1.6, m: 2.4, ml: 3.2, l: 4.8, xl: 6.4);
+
+@each $name, $size in $sizes {
+    .mt-#{$name} {
+        margin-top: $size + rem;
+    }
+}
+
+@each $name, $size in $sizes {
+    .mb-#{$name} {
+        margin-bottom: $size + rem;
+    }
+}
+
+@each $name, $size in $sizes {
+    .mr-#{$name} {
+        margin-right: $size + rem;
+    }
+}
+
+@each $name, $size in $sizes {
+    .ml-#{$name} {
+        margin-left: $size + rem;
+    }
+}
+
+@each $name, $size in $sizes {
+    .mh-#{$name} {
+        margin-right: $size + rem;
+        margin-left: $size + rem;
+    }
+}
+
+@each $name, $size in $sizes {
+    .mv-#{$name} {
+        margin-top: $size + rem;
+        margin-bottom: $size + rem;
+    }
+}

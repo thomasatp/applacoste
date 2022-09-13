@@ -1,0 +1,84 @@
+@import '_vars.scss';
+
+@font-face {
+    font-family: "Lacoste-Heavy";
+    font-weight: bold;
+    src: local("Lacoste-Heavy"), url("../utils/fonts/Lacoste-Heavy.woff") format("woff"),
+      url("../utils/fonts/Lacoste-Heavy.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Archivo";
+    font-weight: normal;
+    src: local("Archivo-Regular"), url("../utils/fonts/Archivo-Regular.woff") format("woff"),
+      url("../utils/fonts/Archivo-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Archivo";
+  font-weight: bold;
+  src: local("Archivo-Regular"), url("../utils/fonts/Archivo-ExtraBold.woff") format("woff"),
+    url("../utils/fonts/Archivo-ExtraBold.woff2") format("woff2");
+}
+  
+.lacoste {
+  font-family: "Lacoste-Heavy", Futura;
+  text-transform: uppercase;
+}
+
+
+.headline {
+  font-size: 5rem;
+  line-height: 1.2;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 3rem;
+    line-height: 1.3;
+  }
+}
+
+.title {
+  font-size: 2.6rem;
+  line-height: 1.3;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 2.2rem;
+    line-height: 1.5;
+  }
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+.body {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.caption {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.subcaption {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.regular {
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dark {
+  color: $codegray;
+}
+
+.medium {
+  color: $dustygray;
+}

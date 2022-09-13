@@ -1,20 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import App from './App'
-import Starter from './components/starter/Starter'
 import reportWebVitals from './reportWebVitals'
-import Plp from './pages/Plp'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path={process.env.PUBLIC_URL + '/'} element={<App children={<Starter />} />} />
-        <Route path={process.env.PUBLIC_URL + '/plp'} element={<App children={<Plp />} />} />
-      </Routes>
+    <BrowserRouter>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 )

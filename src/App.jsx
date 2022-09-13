@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import './sass/App.scss'
 import Header from './components/header/Header'
 import mediaQueries from './utils/mediaQueries'
 import { useScroll } from './hooks/useScroll'
+import Plp from './pages/Plp'
+import Starter from './components/starter/Starter'
 
-function App({ children }) {
+function App() {
   const savedTheme = localStorage.getItem('darkTheme')
   const [darkTheme, setDarkTheme] = useState(savedTheme ? JSON.parse(savedTheme) : [])
   useEffect(() => {
@@ -18,7 +20,12 @@ function App({ children }) {
   return (
     <div className='App'>
       <Header scrollDisplay={scrollDisplay} darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-      <MainContainer darkTheme={darkTheme}>{children}</MainContainer>
+      <MainContainer darkTheme={darkTheme}>
+        <Routes>
+          <Route path={process.env.PUBLIC_URL + '/'} element={<Starter />} />
+          <Route path={process.env.PUBLIC_URL + '/plp'} element={<Plp />} />
+        </Routes>
+      </MainContainer>
     </div>
   )
 }

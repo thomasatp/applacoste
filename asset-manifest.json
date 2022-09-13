@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/applacoste/static/css/main.371b7bac.css",
-    "main.js": "/applacoste/static/js/main.9ccc6312.js",
+    "main.js": "/applacoste/static/js/main.c8ada99c.js",
     "static/js/787.fe84f957.chunk.js": "/applacoste/static/js/787.fe84f957.chunk.js",
-    "static/media/surf.mp4": "/applacoste/static/media/surf.1ebb39d6d913915beefd.mp4",
+    "static/media/durable.mp4": "/applacoste/static/media/durable.89f69a58e29c5a51e6ff.mp4",
     "static/media/starter.mp4": "/applacoste/static/media/starter.9ea7f2afe693fabdfc95.mp4",
     "static/media/Lacoste-Heavy.woff": "/applacoste/static/media/Lacoste-Heavy.e0008975238776ecbf79.woff",
     "static/media/Lacoste-Heavy.woff2": "/applacoste/static/media/Lacoste-Heavy.ae7b928cb3d9bdd79dff.woff2",
@@ -15,11 +15,11 @@
     "static/media/custo.svg": "/applacoste/static/media/custo.686dfae78171348edff730506ffa6521.svg",
     "index.html": "/applacoste/index.html",
     "main.371b7bac.css.map": "/applacoste/static/css/main.371b7bac.css.map",
-    "main.9ccc6312.js.map": "/applacoste/static/js/main.9ccc6312.js.map",
+    "main.c8ada99c.js.map": "/applacoste/static/js/main.c8ada99c.js.map",
     "787.fe84f957.chunk.js.map": "/applacoste/static/js/787.fe84f957.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.371b7bac.css",
-    "static/js/main.9ccc6312.js"
+    "static/js/main.c8ada99c.js"
   ]
 }

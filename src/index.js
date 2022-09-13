@@ -10,10 +10,10 @@ import Plp from './pages/Plp'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path='/' element={<App children={<Starter />} />} />
-        <Route path='/plp' element={<App children={<Plp />} />} />
+        <Route path={process.env.PUBLIC_URL + '/'} element={<App children={<Starter />} />} />
+        <Route path={process.env.PUBLIC_URL + '/plp'} element={<App children={<Plp />} />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

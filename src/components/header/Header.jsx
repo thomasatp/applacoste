@@ -66,7 +66,7 @@ function Header({ darkTheme, setDarkTheme, scrollDisplay }) {
   return (
     <Wrapper darkTheme={darkTheme}>
       <Head>
-        <Link to='/'>
+        <Link to={process.env.PUBLIC_URL + '/'}>
           <Logo darkTheme={darkTheme} />
         </Link>
         <SearchBar scrollDisplay={scrollDisplay} open={open} darkTheme={darkTheme}>

@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/applacoste/static/css/main.371b7bac.css",
-    "main.js": "/applacoste/static/js/main.f02ce398.js",
+    "main.css": "/applacoste/static/css/main.e82b9a9b.css",
+    "main.js": "/applacoste/static/js/main.1af6d813.js",
     "static/js/787.fe84f957.chunk.js": "/applacoste/static/js/787.fe84f957.chunk.js",
     "static/media/durable.mp4": "/applacoste/static/media/durable.89f69a58e29c5a51e6ff.mp4",
     "static/media/starter.mp4": "/applacoste/static/media/starter.9ea7f2afe693fabdfc95.mp4",
+    "static/media/paris.jpg": "/applacoste/static/media/paris.1d56551a95f4cc316e6a.jpg",
+    "static/media/jogger.jpg": "/applacoste/static/media/jogger.d9bbf5540201481692bb.jpg",
+    "static/media/sport.jpg": "/applacoste/static/media/sport.bafa05250a2ebf3d04fa.jpg",
     "static/media/Lacoste-Heavy.woff": "/applacoste/static/media/Lacoste-Heavy.e0008975238776ecbf79.woff",
     "static/media/Lacoste-Heavy.woff2": "/applacoste/static/media/Lacoste-Heavy.ae7b928cb3d9bdd79dff.woff2",
     "static/media/durable.svg": "/applacoste/static/media/durable.ffcff9310698794ee473d1ae3a806224.svg",
@@ -14,12 +17,12 @@
     "static/media/Archivo-ExtraBold.woff2": "/applacoste/static/media/Archivo-ExtraBold.c8c27ea5f8e0c4fe78a9.woff2",
     "static/media/custo.svg": "/applacoste/static/media/custo.686dfae78171348edff730506ffa6521.svg",
     "index.html": "/applacoste/index.html",
-    "main.371b7bac.css.map": "/applacoste/static/css/main.371b7bac.css.map",
-    "main.f02ce398.js.map": "/applacoste/static/js/main.f02ce398.js.map",
+    "main.e82b9a9b.css.map": "/applacoste/static/css/main.e82b9a9b.css.map",
+    "main.1af6d813.js.map": "/applacoste/static/js/main.1af6d813.js.map",
     "787.fe84f957.chunk.js.map": "/applacoste/static/js/787.fe84f957.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.371b7bac.css",
-    "static/js/main.f02ce398.js"
+    "static/css/main.e82b9a9b.css",
+    "static/js/main.1af6d813.js"
   ]
 }

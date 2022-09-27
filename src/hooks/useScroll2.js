@@ -7,7 +7,7 @@ export function useScroll(val) {
   function handleScroll() {
     const position = window.pageYOffset
     setScrollPosition(position)
-    position > val && scrollPosition < position ? setScrollDisplay(false) : setScrollDisplay(true)
+    scrollPosition > val ? setScrollDisplay(false) : setScrollDisplay(true)
   }
 
   useEffect(() => {

@@ -77,7 +77,6 @@ function Tile({ src, title, price, productColors, tag, productView, gridValue })
         {(productView ? coco : src).map((img, id) => (
           <Image id={id} key={id} src={img} alt={title} ratio='125%' />
         ))}
-        <Right />
       </ImageWrapper>
       <InfoWrapper>
         <h2
@@ -92,7 +91,7 @@ function Tile({ src, title, price, productColors, tag, productView, gridValue })
           {title}
         </h2>
         <p className='caption regular mt-xs'>{price}</p>
-        <ColorSelection display={mouseOver} productColors={productColors} />
+        <ColorSelection displa={mouseOver} productColors={productColors} />
         <div className='flex mt-s wrap'>
           <BottomTag name='Durable' src={durable} />
           <BottomTag name='Customisation' src={custo} />
@@ -103,13 +102,6 @@ function Tile({ src, title, price, productColors, tag, productView, gridValue })
     </Wrapper>
   )
 }
-
-const Right = styled.a`
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  background: codegray;
-`
 
 const Wrapper = styled.a`
   display: flex;
@@ -191,7 +183,7 @@ const ColorSelectionWrapper = styled.div`
   background: ${colors.white};
   @media ${mediaQueries.desktopOnly} {
     position: absolute;
-    display: ${({ display }) => (display ? 'flex' : 'none')};
+    display: ${({ displa }) => (displa ? 'flex' : 'none')};
   }
 `
 

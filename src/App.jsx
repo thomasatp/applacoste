@@ -16,7 +16,7 @@ function App() {
     localStorage.setItem('darkTheme', JSON.stringify(darkTheme))
   }, [darkTheme])
 
-  const scrollDisplay = useScroll()
+  const scrollDisplay = useScroll(60)
 
   return (
     <div className='App'>

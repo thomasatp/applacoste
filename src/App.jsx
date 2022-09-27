@@ -6,6 +6,7 @@ import Header from './components/header/Header'
 import mediaQueries from './utils/mediaQueries'
 import { useScroll } from './hooks/useScroll'
 import Plp from './pages/Plp'
+import Tracksuits from './pages/Tracksuits'
 import Starter from './components/starter/Starter'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Starter />} />
           <Route path='/plp' element={<Plp />} />
+          <Route path='/tracksuits' element={<Tracksuits />} />
         </Routes>
       </MainContainer>
     </div>

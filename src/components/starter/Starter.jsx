@@ -10,7 +10,7 @@ export default function Starter() {
   const [ref, isVisible] = useObserver({
     root: null,
     rootMargin: '0px',
-    treshold: 0.4,
+    threshold: 0.4,
   })
 
   return (

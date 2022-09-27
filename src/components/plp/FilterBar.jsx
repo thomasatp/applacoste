@@ -4,6 +4,7 @@ import colors from '../../utils/colors'
 import { useScroll } from '../../hooks/useScroll'
 import mediaQueries from '../../utils/mediaQueries'
 import Filters from '../../medias/icons/Filters'
+import { polos } from '../../data'
 
 function FilterBar({ filters, setFilters, productView, setProductView, gridValue, setGridValue }) {
   const scrollDisplay = useScroll()
@@ -30,6 +31,7 @@ function FilterBar({ filters, setFilters, productView, setProductView, gridValue
           id='grid'
         />
       </div>
+      <p className='body'>{polos.length} results</p>
     </Wrapper>
   )
 }

@@ -8,7 +8,6 @@ import { polos } from './../data'
 function Plp() {
   const [filters, setFilters] = useState(false)
   const [productView, setProductView] = useState(false)
-
   const savedGrid = localStorage.getItem('gridValue')
   const [gridValue, setGridValue] = useState(savedGrid ? JSON.parse(savedGrid) : ['50'])
   useEffect(() => {
@@ -29,7 +28,7 @@ function Plp() {
         gridValue={gridValue}
         setGridValue={setGridValue}
       />
-      <Grid filters={filters} productView={productView}>
+      <Grid filters={filters} productView={productView} gridValue={gridValue}>
         {polos.map(polo => (
           <Tile
             productView={productView}

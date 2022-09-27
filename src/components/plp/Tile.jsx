@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Image from '../medias/Image'
 import durable from '../../medias/durable.svg'
@@ -6,6 +6,7 @@ import custo from '../../medias/custo.svg'
 import colors from '../../utils/colors'
 import mediaQueries from '../../utils/mediaQueries'
 import Wishlist from '../../medias/icons/Wishlist'
+import useObserver from '../../hooks/useObserver'
 
 function BottomTag({ name, src }) {
   return (
@@ -47,19 +48,37 @@ function ColorSelection({ productColors, display }) {
 
 function Tile({ src, title, price, productColors, tag, productView, gridValue }) {
   const [mouseOver, setMouseOver] = useState(false)
+  const [visibility, setVisibility] = useState('hidden')
+  const [ref, isVisible] = useObserver({
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  })
+
+  useEffect(() => {
+    isVisible && setVisibility('')
+  }, [isVisible])
+
+  const last = src.slice(0).pop()
+  const coco = src.slice(0)
+  coco.pop()
+  coco.unshift(last)
 
   return (
     <Wrapper
+      ref={ref}
+      className={visibility}
       productView={productView}
       gridValue={gridValue}
       onMouseEnter={() => setMouseOver(true)}
       onMouseLeave={() => setMouseOver(false)}
     >
-      <Image
-        src={src[(productView && mouseOver) || (!productView && !mouseOver) ? 0 : 1]}
-        alt={title}
-        ratio='125%'
-      />
+      <ImageWrapper>
+        {(productView ? coco : src).map((img, id) => (
+          <Image id={id} key={id} src={img} alt={title} ratio='125%' />
+        ))}
+        <Right />
+      </ImageWrapper>
       <InfoWrapper>
         <h2
           className='caption regular mt-s'
@@ -85,25 +104,36 @@ function Tile({ src, title, price, productColors, tag, productView, gridValue })
   )
 }
 
+const Right = styled.a`
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  background: codegray;
+`
+
 const Wrapper = styled.a`
   display: flex;
   position: relative;
+  will-change: opacity;
+  transition: opacity ease 0.4s;
   flex-direction: column;
-  width: ${({ gridValue }) =>
-    gridValue < 25
-      ? 'calc(100%/6)'
-      : gridValue >= 25 && gridValue < 50
-      ? '20%'
-      : gridValue >= 50 && gridValue < 75
-      ? '25%'
-      : 'calc(100%/3)'};
-  padding: 0.4rem;
+  width: 100%;
   margin-bottom: 3.2rem;
   cursor: pointer;
+  background: ${colors.white};
+`
 
-  @media ${mediaQueries.mobileOnly} {
-    width: ${({ gridValue }) => (gridValue < 50 ? '50%' : '100%')};
-    padding: 0.2rem;
+const ImageWrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  ::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0;
   }
 `
 

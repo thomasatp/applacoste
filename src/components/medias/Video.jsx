@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Video({ source, gradient }) {
+function Video({ source, gradient, width }) {
   return (
-    <VideoWrapper gradient={gradient}>
+    <VideoWrapper gradient={gradient} width={width}>
       <VideoItem
         preload='auto'
         autoStart
@@ -20,7 +20,9 @@ function Video({ source, gradient }) {
 
 const VideoWrapper = styled.div`
   display: flex;
-  width: 100%;
+  clip-path: inset(0);
+  height: 100%;
+  width: ${({ width }) => (width ? `${width}%` : '100%')};
   ${({ gradient }) =>
     gradient &&
     `::after {

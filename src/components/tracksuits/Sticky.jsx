@@ -1,42 +1,44 @@
 import React from 'react'
 import styled from 'styled-components'
-import { polos } from '../../data'
+import { track } from '../../datatrack'
 import colors from '../../utils/colors'
 import mediaQueries from '../../utils/mediaQueries'
 import Image from '../medias/Image'
 import Tile from '../plp/Tile'
 
-function Sticky({ reverse, source, title, reference }) {
+function Sticky({ reverse, source, title, reference, withoutgrid, color }) {
   return (
     <Container id={title} ref={reference}>
-      <Header>
-        <MainTitle className='title lacoste' style={{ width: '100%' }}>
-          {title}
-        </MainTitle>
-        <p className='subtitle dark mt-m'>
+      <Header coloris={color}>
+        <MainTitle className='title lacoste'>{title}</MainTitle>
+        <p className='subtitle mt-m'>
           At sit viverra dictumst tortor scelerisque blandit semper. Metus euismod ut a facilisis
           turpis. In auctor massa tortor hendrerit consectetur tellus lacus. At dolor eleifend at
           justo habitasse nec dapibus id tristique.{' '}
         </p>
       </Header>
-      <StickyContainer reverse={reverse}>
-        <Title>
-          <h3 className='light lacoste'>{title}</h3>
-        </Title>
+      <StickyContainer reverse={reverse} withoutgrid={withoutgrid}>
+        {!withoutgrid && (
+          <Title>
+            <h3 className='light lacoste'>{title}</h3>
+          </Title>
+        )}
         <Image src={source} alt={source} />
       </StickyContainer>
-      <Wrapper gridValue={2}>
-        {polos.slice(8, 16).map((polo, id) => (
-          <Tile
-            key={id}
-            src={polo.image}
-            title={polo.title}
-            price={polo.price}
-            productColors={polo.colors}
-            tag={polo.tag}
-          />
-        ))}
-      </Wrapper>
+      {!withoutgrid && (
+        <Wrapper gridValue={2}>
+          {track.map((polo, id) => (
+            <Tile
+              key={id}
+              src={polo.image}
+              title={polo.title}
+              price={polo.price}
+              productColors={polo.colors}
+              tag={polo.tag}
+            />
+          ))}
+        </Wrapper>
+      )}
     </Container>
   )
 }
@@ -47,7 +49,7 @@ const Header = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  color: ${colors.codegray};
+  color: ${({ coloris }) => coloris};
   margin-bottom: 4vw;
   padding: 0 32vw;
 
@@ -89,7 +91,7 @@ const Container = styled.div`
 const StickyContainer = styled.div`
   position: sticky;
   order: ${({ reverse }) => (reverse ? 1 : 0)};
-  width: 48%;
+  width: ${({ withoutgrid }) => (withoutgrid ? '100%' : '48%')};
   top: 0;
   height: 100vh;
   z-index: 0;
@@ -101,7 +103,6 @@ const StickyContainer = styled.div`
 `
 const Wrapper = styled.div`
   display: grid;
-  background-color: ${colors.white} !important;
   z-index: 2;
   clip-path: inset(0);
   flex: 1;
@@ -115,5 +116,6 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(calc(50% - 0.2rem), 1fr));
     column-gap: 0.2rem;
     width: 96%;
+    background-color: ${colors.white};
   }
 `

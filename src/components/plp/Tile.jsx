@@ -91,11 +91,13 @@ function Tile({ src, title, price, productColors, tag, productView, gridValue })
           {title}
         </h2>
         <p className='caption regular mt-xs'>{price}</p>
-        <ColorSelection displa={mouseOver} productColors={productColors} />
-        <div className='flex mt-s wrap'>
-          <BottomTag name='Durable' src={durable} />
-          <BottomTag name='Customisation' src={custo} />
-        </div>
+        {productColors && <ColorSelection displa={mouseOver} productColors={productColors} />}
+        {tag && (
+          <div className='flex mt-s wrap'>
+            <BottomTag name='Durable' src={durable} />
+            <BottomTag name='Customisation' src={custo} />
+          </div>
+        )}
       </InfoWrapper>
       {tag && <Tag>{tag}</Tag>}
       <Wishlist color={colors.silver} />

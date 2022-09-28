@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export function useScroll(val) {
+export function useScroll2(val) {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [scrollDisplay, setScrollDisplay] = useState(true)
 

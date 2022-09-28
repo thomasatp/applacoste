@@ -7,7 +7,7 @@ import Filters from '../../medias/icons/Filters'
 import { polos } from '../../data'
 
 function FilterBar({ filters, setFilters, productView, setProductView, gridValue, setGridValue }) {
-  const scrollDisplay = useScroll()
+  const scrollDisplay = useScroll(60)
 
   function handleRange(e) {
     setGridValue(e.target.value)

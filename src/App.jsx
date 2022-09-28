@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Starter />} />
           <Route path='/plp' element={<Plp />} />
-          <Route path='/tracksuits' element={<Tracksuits />} />
+          <Route path='/tracksuits' element={<Tracksuits setDarkTheme={setDarkTheme} />} />
         </Routes>
       </MainContainer>
     </div>
